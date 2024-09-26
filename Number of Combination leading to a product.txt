@@ -1,0 +1,20 @@
+def count_triplets_with_product(arr, n, m):
+    count = 0
+    
+    # Check every combination of triplets
+    for i in range(n):
+        for j in range(i + 1, n):
+            for k in range(j + 1, n):
+                # If the product of triplet is equal to m
+                if arr[i] * arr[j] * arr[k] == m:
+                    count += 1
+                    
+    return count
+
+# Reading input
+n = int(input())  # Read the size of the array
+arr = list(map(int, input().split()))  # Read the array elements
+m = int(input())  # Read the target product
+
+# Output the result
+print(count_triplets_with_product(arr, n, m))
